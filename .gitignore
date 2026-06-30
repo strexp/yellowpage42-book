@@ -1,0 +1,6 @@
+assets/data.json
+assets/data-noc.json
+assets/icons-*.json
+fonts/*
+*.pdf
+__pycache__
