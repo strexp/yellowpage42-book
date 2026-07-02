@@ -18,7 +18,7 @@
       yp.dn42
     ]
     #v(1pt)
-    #text(font: book_base_font_sans, size: 7pt, weight: 600, fill: luma(45))[
+    #text(font: book_base_font_sans, size: 9pt, weight: 600, fill: luma(45))[
       THE DN42 TELEPHONE DIRECTORY
     ]
     #block(above: 0.5em, below: 0.5em)[

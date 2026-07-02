@@ -2,7 +2,6 @@
 #import "../lib/templates.typ": body-section, category-heading, phone-entry
 
 #body-section(
-  "Categorized Directory",
   numbering-start: true,
   [
     #v(1em)
@@ -10,6 +9,8 @@
     #let raw-data = json("/assets/data.json")
 
     #columns(2)[
+      #heading(numbering: none)[Categorized Directory]
+      
       #let unique-types = raw-data.map(e => e.at("type", default: "other")).dedup().sorted()
 
       // ADs variables
@@ -54,5 +55,5 @@
         v(2em, weak: true)
       }
     ]
-  ]
+  ],
 )

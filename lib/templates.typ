@@ -5,20 +5,19 @@
   let cleaned = number.replace(" ", "")
   if cleaned.starts-with("+042") {
     cleaned = cleaned.slice(4)
-    cleaned = cleaned.at(0) + "-" + cleaned.slice(1,5) + "-" + cleaned.slice(5)
+    cleaned = cleaned.at(0) + "-" + cleaned.slice(1, 5) + "-" + cleaned.slice(5)
   }
   cleaned
 }
 
-#let body-section(title, numbering-start: false, body) = {
+#let body-section(numbering-start: false, body) = {
   pagebreak(to: "odd")
   show: doc => setpageheader(doc)
   show: doc => setpagefooter(doc)
   if numbering-start {
     counter(page).update(1)
   }
-
-  heading(numbering: none)[#title]
+  
   body
 }
 
@@ -39,7 +38,7 @@
   let formatted-primary = if primary-number != "" { format-number(primary-number) } else { "" }
   let formatted-additional = additional-numbers.map(phone => format-number(phone))
   block(width: 100%, breakable: false)[
-    #text(weight: "bold", size: 9pt, hyphenate: true, smallcaps(name))
+    #text(weight: "medium", size: 10pt, hyphenate: true, smallcaps(name))
     #if line-before-num != none {
       linebreak()
       text(size: 7pt, fill: luma(60))[#line-before-num]
@@ -48,7 +47,7 @@
       linebreak()
       text(size: 7pt, fill: luma(60))[#line-in-num]
       box(width: 1fr, text(size: 7pt, repeat[.]))
-      text(weight: "medium", size: 9pt, font: book_base_font_mono)[#formatted-primary]
+      text(weight: "medium", size: 9pt, font: book_base_font_number, number-width: "tabular")[#formatted-primary]
     }
     #if line-after-num != none {
       linebreak()
@@ -59,10 +58,10 @@
       let label = text(size: 7pt, fill: luma(60), "ALSO")
       label
       box(width: 1fr, text(size: 7pt, repeat[.]))
-      text(weight: "medium", size: 8pt, font: book_base_font_mono)[#phone]
+      text(weight: "medium", size: 8pt, font: book_base_font_number, number-width: "tabular")[#phone]
     }
   ]
-  v(0.8em, weak: true)
+  v(1.2em, weak: true)
 }
 
 #let phone-entry(entry-name, mnt-name, mnt, number, has-sms: false, lang-code: "") = {
@@ -72,7 +71,7 @@
   }
   if lang-code != "" and lang-code != "und" {
     display-name += box(width: 1fr)
-    display-name += text(font: book_base_font_mono, size: 7pt, weight: "medium", "[" + lang-code + "]")
+    display-name += text(size: 7pt, weight: "light", "[" + lang-code + "]")
   }
 
   let detail = if mnt-name != "" { mnt-name } else { mnt }

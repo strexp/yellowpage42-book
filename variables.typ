@@ -22,29 +22,29 @@
 )
 
 #let language-codes = (
-  (`mul`, "Multiple languages"),
-  (`eng`, "English"),
-  (`cmn`, "Mandarin Chinese"),
-  (`yue`, "Cantonese"),
-  (`nan`, "Min Nan"),
-  (`jpn`, "Japanese"),
-  (`kor`, "Korean"),
-  (`rus`, "Russian"),
-  (`deu`, "German"),
-  (`fra`, "French"),
-  (`ita`, "Italian"),
-  (`spa`, "Spanish"),
-  (`por`, "Portuguese"),
-  (`msa`, "Malay"),
-  (`vie`, "Vietnamese"),
-  (`hin`, "Hindi"),
-  (`ben`, "Bengali"),
-  (`fas`, "Persian"),
-  (`tur`, "Turkish"),
-  (`tha`, "Thai"),
-  (`jav`, "Javanese"),
-  (`und`, "Unknown"),
-  (`mis`, "Uncoded"),
+  ("mul", "Multiple languages"),
+  ("eng", "English"),
+  ("cmn", "Mandarin Chinese"),
+  ("yue", "Cantonese"),
+  ("nan", "Min Nan"),
+  ("jpn", "Japanese"),
+  ("kor", "Korean"),
+  ("rus", "Russian"),
+  ("deu", "German"),
+  ("fra", "French"),
+  ("ita", "Italian"),
+  ("spa", "Spanish"),
+  ("por", "Portuguese"),
+  ("msa", "Malay"),
+  ("vie", "Vietnamese"),
+  ("hin", "Hindi"),
+  ("ben", "Bengali"),
+  ("fas", "Persian"),
+  ("tur", "Turkish"),
+  ("tha", "Thai"),
+  ("jav", "Javanese"),
+  ("und", "Unknown"),
+  ("mis", "Uncoded"),
 )
 
 #let book_title = "Public Telephone Directory"
@@ -59,9 +59,9 @@
 // Directory & Body Text
 #let book_base_font_serif = ("Newsreader 16pt", "Noto Serif SC", "Noto Serif TC", "Noto Emoji")
 // Front Matter & Headers
-#let book_base_font_sans = "Lexend"
+#let book_base_font_sans = "Archivo Narrow"
 // Phone Number
-#let book_base_font_mono = "Space Mono"
+#let book_base_font_number = book_base_font_serif
 // Cover & Display
 #let book_font_display = "Fraunces"
 

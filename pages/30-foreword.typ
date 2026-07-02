@@ -11,6 +11,8 @@ Welcome to the dn42 Public Telephone Directory. This publication provides a comp
 
 Entries are organized by service type and sorted alphabetically within each category for easy reference. Each listing includes the service name, contact number, maintainer information, and available features.
 
+#v(1em)
+
 == List of Sections:
 
 - #icon-list-item("phone", "Standard Landline / Analog SIP")
@@ -25,13 +27,19 @@ Entries are organized by service type and sorted alphabetically within each cate
 - #icon-list-item("modem", "Modem / Dial-up Service")
 - #icon-list-item("other", "Unclassified / Other Terminal")
 
+#v(1em)
+
 == List of Symbols:
 
 - #icon-list-item("sms", "Message Available")
 
+#v(1em)
+
 == List of Language Codes
 
 #language-code-table()
+
+#v(1em)
 
 == Maintainer (MNT) Information:
 

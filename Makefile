@@ -1,10 +1,9 @@
 # Font URLs
 FONT_FRAUNCES_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/fraunces/Fraunces%5BSOFT,WONK,opsz,wght%5D.ttf
 FONT_FRAUNCES_ITALIC_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/fraunces/Fraunces-Italic%5BSOFT,WONK,opsz,wght%5D.ttf
-FONT_LEXEND_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/lexend/Lexend%5Bwght%5D.ttf
+FONT_ARCHIVO_NARROW_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/archivonarrow/ArchivoNarrow%5Bwght%5D.ttf
 FONT_NEWSREADER_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/newsreader/Newsreader%5Bopsz,wght%5D.ttf
 FONT_NEWSREADER_ITALIC_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/newsreader/Newsreader-Italic%5Bopsz,wght%5D.ttf
-FONT_SPACE_MONO_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/spacemono/SpaceMono-Regular.ttf
 FONT_NOTO_EMOJI_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/notoemoji/NotoEmoji%5Bwght%5D.ttf
 FONT_NOTO_SERIF_SC_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf
 FONT_NOTO_SERIF_TC_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/notoseriftc/NotoSerifTC%5Bwght%5D.ttf
@@ -27,10 +26,9 @@ fonts:
 	mkdir -p fonts
 	[ -f fonts/Fraunces.ttf ] || wget '$(FONT_FRAUNCES_URL)' -O fonts/Fraunces.ttf
 	[ -f fonts/Fraunces-Italic.ttf ] || wget '$(FONT_FRAUNCES_ITALIC_URL)' -O fonts/Fraunces-Italic.ttf
-	[ -f fonts/Lexend.ttf ] || wget '$(FONT_LEXEND_URL)' -O fonts/Lexend.ttf
+	[ -f fonts/ArchivoNarrow.ttf ] || wget '$(FONT_ARCHIVO_NARROW_URL)' -O fonts/ArchivoNarrow.ttf
 	[ -f fonts/Newsreader.ttf ] || wget '$(FONT_NEWSREADER_URL)' -O fonts/Newsreader.ttf
 	[ -f fonts/Newsreader-Italic.ttf ] || wget '$(FONT_NEWSREADER_ITALIC_URL)' -O fonts/Newsreader-Italic.ttf
-	[ -f fonts/SpaceMono-Regular.ttf ] || wget '$(FONT_SPACE_MONO_URL)' -O fonts/SpaceMono-Regular.ttf
 	[ -f fonts/NotoEmoji.ttf ] || wget '$(FONT_NOTO_EMOJI_URL)' -O fonts/NotoEmoji.ttf
 	[ -f fonts/NotoSerifSC.ttf ] || wget '$(FONT_NOTO_SERIF_SC_URL)' -O fonts/NotoSerifSC.ttf
 	[ -f fonts/NotoSerifTC.ttf ] || wget '$(FONT_NOTO_SERIF_TC_URL)' -O fonts/NotoSerifTC.ttf

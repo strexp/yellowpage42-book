@@ -2,13 +2,13 @@
 #import "../lib/templates.typ": body-section, category-heading, noc-entry
 
 #body-section(
-  "NOC Directory",
   [
     #v(1em)
 
     #let noc-data = json("/assets/data-noc.json")
 
     #columns(2)[
+      #heading(numbering: none)[NOC Directory]
       // Persons Section
       #category-heading(icon("mdi:account", width: 1em, y: -1.5pt), "Persons")
 

@@ -16,17 +16,17 @@
     #image("/assets/dn42.svg", width: 90pt)
     #v(1.5em)
 
-    #text(size: 20pt, weight: "bold", tracking: 1pt, font: book_font_display)[PUBLIC TELEPHONE DIRECTORY] \
-    #text(size: 14pt, weight: "bold", tracking: 1pt, font: book_font_display)[OF DN42 TELEPHONY NETWORK] \
+    #text(size: 22pt, weight: "bold", tracking: 1pt, font: book_font_display)[#upper(book_title)] \
+    #text(size: 16pt, weight: "bold", tracking: 1pt, font: book_font_display)[#upper(book_subtitle)] \
 
-    #v(0.5em)
+    #v(1em)
     #text(
-      size: 12pt,
+      size: 14pt,
       style: "italic",
       font: book_base_font_sans,
     )[#book_author\ #book_author_dep] \
 
-    #v(5em)
+    #v(3em)
 
     #block(width: 100%, stroke: 0.5pt, inset: 15pt, fill: luma(250))[
       #set text(size: 10pt)
@@ -42,21 +42,21 @@
       align: (left + bottom, right + horizon),
       [
         #text(size: 32pt, fill: luma(100), font: book_base_font_sans)[#cc-by-nc-sa] \
-        #text(size: 9pt, fill: luma(100), font: book_base_font_sans)[Licensed under CC-BY-NC-SA 4.0] \
+        #text(size: 10pt, fill: luma(100), font: book_base_font_sans)[Licensed under CC-BY-NC-SA 4.0] \
         #v(1em)
-        #text(size: 10pt, weight: "bold", font: book_base_font_sans)[DISTRIBUTED FREE OF CHARGE]
+        #text(size: 12pt, weight: "bold", font: book_base_font_sans)[DISTRIBUTED FREE OF CHARGE]
       ],
       [
         #block(inset: 8pt, fill: white, stroke: 0.5pt)[
           #tiaoma.ean("4242000000000")
           #v(0.3em)
-          #text(size: 8pt, weight: "bold", font: book_base_font_mono)[DSBN 424-2-000000-00-0]
+          #text(size: 8pt, number-width: "tabular")[DSBN 424-2-000000-00-0]
         ]
       ],
     )
 
     #v(3em)
-    #text(size: 12pt, weight: "bold", tracking: 2pt, font: book_base_font_sans)[END OF DIRECTORY]
+    #text(size: 14pt, weight: "bold", tracking: 2pt, font: book_base_font_sans)[END OF DIRECTORY]
     #v(1em)
   ]
 ]

@@ -26,9 +26,8 @@ make watch
 ## Font Requirements
 
 The document uses the following font families:
-- **Newsreader** — Body text (serif)
-- **Plus Jakarta Sans** — Headings and UI elements (sans-serif)
-- **Space Mono** — Phone numbers (monospace)
+- **Newsreader** — Body text & Phone numbers (serif)
+- **Archivo Narrow** — Headings and UI elements (sans-serif)
 - **Fraunces** — Display and cover text
 
 For proper Chinese/CJK character support, Noto Serif CJK SC is configured as fallback font.

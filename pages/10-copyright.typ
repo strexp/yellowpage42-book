@@ -26,11 +26,11 @@
   #v(1em)
   *SOURCE CODE:* \
   The source code for generating this directory is available at: \
-  #h(2em) #text(font: book_base_font_mono, book_source)
+  #h(2em) #text(book_source)
 
   *TELEPHONY DATA:* \
   The source of telephone directory data is available at: \
-  #h(2em) #text(font: book_base_font_mono, book_data_source)
+  #h(2em) #text(book_data_source)
 ]
 
 #pagebreak()
