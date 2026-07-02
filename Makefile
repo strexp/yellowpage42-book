@@ -1,14 +1,16 @@
-# Font URLs
-FONT_FRAUNCES_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/fraunces/Fraunces%5BSOFT,WONK,opsz,wght%5D.ttf
-FONT_FRAUNCES_ITALIC_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/fraunces/Fraunces-Italic%5BSOFT,WONK,opsz,wght%5D.ttf
-FONT_ARCHIVO_NARROW_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/archivonarrow/ArchivoNarrow%5Bwght%5D.ttf
-FONT_NEWSREADER_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/newsreader/Newsreader%5Bopsz,wght%5D.ttf
-FONT_NEWSREADER_ITALIC_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/newsreader/Newsreader-Italic%5Bopsz,wght%5D.ttf
-FONT_NOTO_EMOJI_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/notoemoji/NotoEmoji%5Bwght%5D.ttf
-FONT_NOTO_SERIF_SC_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf
-FONT_NOTO_SERIF_TC_URL := https://github.com/google/fonts/raw/refs/heads/main/ofl/notoseriftc/NotoSerifTC%5Bwght%5D.ttf
+.PHONY: all sync icon fonts build watch clean a4
 
-.PHONY: all sync icon fonts build watch clean
+FONT_BASE := https://github.com/google/fonts/raw/refs/heads/main
+
+FONTS_LIST := \
+	ofl/fraunces/Fraunces%5BSOFT,WONK,opsz,wght%5D.ttf:Fraunces.ttf \
+	ofl/fraunces/Fraunces-Italic%5BSOFT,WONK,opsz,wght%5D.ttf:Fraunces-Italic.ttf \
+	ofl/archivonarrow/ArchivoNarrow%5Bwght%5D.ttf:ArchivoNarrow.ttf \
+	ofl/newsreader/Newsreader%5Bopsz,wght%5D.ttf:Newsreader.ttf \
+	ofl/newsreader/Newsreader-Italic%5Bopsz,wght%5D.ttf:Newsreader-Italic.ttf \
+	ofl/notoemoji/NotoEmoji%5Bwght%5D.ttf:NotoEmoji.ttf \
+	ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf:NotoSerifSC.ttf \
+	ofl/notoseriftc/NotoSerifTC%5Bwght%5D.ttf:NotoSerifTC.ttf
 
 # Default target
 all: fonts build
@@ -23,15 +25,15 @@ icon:
 
 # Download fonts
 fonts:
-	mkdir -p fonts
-	[ -f fonts/Fraunces.ttf ] || wget '$(FONT_FRAUNCES_URL)' -O fonts/Fraunces.ttf
-	[ -f fonts/Fraunces-Italic.ttf ] || wget '$(FONT_FRAUNCES_ITALIC_URL)' -O fonts/Fraunces-Italic.ttf
-	[ -f fonts/ArchivoNarrow.ttf ] || wget '$(FONT_ARCHIVO_NARROW_URL)' -O fonts/ArchivoNarrow.ttf
-	[ -f fonts/Newsreader.ttf ] || wget '$(FONT_NEWSREADER_URL)' -O fonts/Newsreader.ttf
-	[ -f fonts/Newsreader-Italic.ttf ] || wget '$(FONT_NEWSREADER_ITALIC_URL)' -O fonts/Newsreader-Italic.ttf
-	[ -f fonts/NotoEmoji.ttf ] || wget '$(FONT_NOTO_EMOJI_URL)' -O fonts/NotoEmoji.ttf
-	[ -f fonts/NotoSerifSC.ttf ] || wget '$(FONT_NOTO_SERIF_SC_URL)' -O fonts/NotoSerifSC.ttf
-	[ -f fonts/NotoSerifTC.ttf ] || wget '$(FONT_NOTO_SERIF_TC_URL)' -O fonts/NotoSerifTC.ttf
+	@mkdir -p fonts
+	@for item in $(FONTS_LIST); do \
+	    url="$(FONT_BASE)/$${item%:*}"; \
+		file="$${item#*:}"; \
+		if [ ! -f "fonts/$$file" ]; then \
+			echo "Downloading $$file ..."; \
+			wget -q -O "fonts/$$file" "$$url"; \
+		fi; \
+	done
 
 # Build the PDF
 build: sync icon fonts
@@ -47,6 +49,6 @@ a4: build
 	
 # Clean generated files
 clean:
-	rm -f main.pdf
+	rm -f main.pdf main_a4_print.pdf
 	rm -f assets/data.json assets/icons-mdi.json
 	rm -f fonts/*.ttf
