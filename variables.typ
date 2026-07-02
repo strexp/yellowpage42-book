@@ -74,3 +74,8 @@
   "20-tech-support.col.typ",
 )
 #let book_ad_min_interval = 10
+
+#let book_ad_font_slab = "Alfa Slab One"
+#let book_ad_font_sans_heavy = "Anton"
+#let book_ad_font_script = "Pacifico"
+#let book_ad_font_tech = "Special Elite"

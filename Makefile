@@ -10,7 +10,11 @@ FONTS_LIST := \
 	ofl/newsreader/Newsreader-Italic%5Bopsz,wght%5D.ttf:Newsreader-Italic.ttf \
 	ofl/notoemoji/NotoEmoji%5Bwght%5D.ttf:NotoEmoji.ttf \
 	ofl/notoserifsc/NotoSerifSC%5Bwght%5D.ttf:NotoSerifSC.ttf \
-	ofl/notoseriftc/NotoSerifTC%5Bwght%5D.ttf:NotoSerifTC.ttf
+	ofl/notoseriftc/NotoSerifTC%5Bwght%5D.ttf:NotoSerifTC.ttf \
+	ofl/alfaslabone/AlfaSlabOne-Regular.ttf:AlfaSlabOne-Regular.ttf \
+	ofl/anton/Anton-Regular.ttf:Anton-Regular.ttf \
+	ofl/pacifico/Pacifico-Regular.ttf:Pacifico-Regular.ttf \
+	apache/specialelite/SpecialElite-Regular.ttf:SpecialElite-Regular.ttf
 
 # Default target
 all: fonts build
