@@ -9,7 +9,7 @@
   #v(0.5em)
   Published by #book_author \
   #book_author_dep \ \
-  Copyright #sym.copyright #book_author. \
+  Copyright #sym.copyright #datetime.today().year() #book_author.
   Licensed under #book_license. Some Rights Reserved. \
   #text(size: 20pt, book_license_mark)
 

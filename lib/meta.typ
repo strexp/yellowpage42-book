@@ -1,7 +1,7 @@
 #import "../variables.typ": *
 
 #let pdf-publisher = book_author
-#let pdf-copyright = "Copyright (c) " + book_author + ". Licensed under " + book_license
+#let pdf-copyright = "Copyright (c) " + str(datetime.today().year()) + " " + book_author + ". Licensed under " + book_license
 #let pdf-subject = "A comprehensive directory of telephone numbers in the dn42 network"
 
 #let set-document-metadata(doc) = {

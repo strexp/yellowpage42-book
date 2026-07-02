@@ -1,5 +1,6 @@
-#import "../variables.typ": book_ad_list, book_ad_min_interval, book_ad_show, type-icon-map
+#import "../variables.typ": type-icon-map
 #import "../lib/templates.typ": body-section, category-heading, phone-entry
+#import "../lib/ads.typ": get-ad-by-index, insert-floating-ad, ad-min-interval, ad-show
 
 #body-section(
   numbering-start: true,
@@ -10,12 +11,11 @@
 
     #columns(2)[
       #heading(numbering: none)[Categorized Directory]
-      
+
       #let unique-types = raw-data.map(e => e.at("type", default: "other")).dedup().sorted()
 
       // ADs variables
-      #let enabled-ads = if book_ad_show { book_ad_list } else { () }
-      #let last-ad-position = -book_ad_min_interval
+      #let last-ad-position = -ad-min-interval
       #let ad-index = 0
       #let global-entry-index = 0
 
@@ -30,14 +30,16 @@
         // ADs logic
         for (item-index, entry) in sorted-items.enumerate() {
           let current-global-index = global-entry-index + item-index
+          let is-category-start = item-index < 2
           let should-insert-ad = (
-            enabled-ads.len() > 0
-              and (current-global-index - last-ad-position) >= book_ad_min_interval
+            ad-show
+              and not is-category-start
+              and (current-global-index - last-ad-position) >= ad-min-interval
               and calc.rem(current-global-index, 4) == 0
           )
           if should-insert-ad {
-            let ad-path = enabled-ads.at(calc.rem(ad-index, enabled-ads.len()))
-            include "../pages/ads/" + ad-path
+            let ad-content = get-ad-by-index(ad-index)
+            insert-floating-ad(ad-content)
             ad-index += 1
             last-ad-position = current-global-index
           }

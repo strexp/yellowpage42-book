@@ -105,6 +105,7 @@
     columns: (auto, 1fr, auto, 1fr),
     stroke: none,
     row-gutter: 0.3em,
+    table.header([*Code*], [*Language*], [*Code*], [*Language*]),
     ..language-codes.flatten()
   )
 }

@@ -67,12 +67,8 @@
 
 #let book_base_font_size = 10pt
 
+// AD
 #let book_ad_show = true
-#let book_ad_list = (
-  "00-placeholder.col.typ",
-  "10-service-promo.col.typ",
-  "20-tech-support.col.typ",
-)
 #let book_ad_min_interval = 10
 
 #let book_ad_font_slab = "Alfa Slab One"

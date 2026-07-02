@@ -1,11 +1,11 @@
 #import "../../variables.typ": *
 
-#block(
+// Returns the ad content as a block that can be placed with place(float: true)
+#let ad-content = block(
   width: 100%,
   stroke: (top: 4pt + luma(20), bottom: 4pt + luma(20), left: 1pt + luma(60), right: 1pt + luma(60)),
   fill: luma(252),
   inset: (top: 1.5em, bottom: 1.5em, left: 0.8em, right: 0.8em),
-  breakable: false,
 )[
   #align(center)[
     #text(font: book_ad_font_sans_heavy, size: 22pt, fill: luma(15))[
