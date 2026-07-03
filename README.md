@@ -11,6 +11,12 @@ This project generates a professional PDF directory containing categorized listi
 
 ## Building
 
+Extract registry meta:
+
+```bash
+python3 utils/extract_noc_contacts.py --registry {path_to_dn42_registry} --output assets/data-noc.json
+```
+
 Build the PDF:
 
 ```bash
@@ -23,6 +29,18 @@ Watch for changes with automatic rebuild:
 make watch
 ```
 
+Build the PDF for A4 booklet (`pypdf` is required):
+
+```bash
+python3 utils/a5_to_a4_booklet.py main.pdf {output_a4_pdf_name}
+```
+
+Build the PDF for long edge reversal double-sided printing (`pypdf` is required):
+
+```bash
+python3 utils/rotate.py {output_a4_pdf_name} {output_a4_rotated_pdf_name}
+```
+
 ## Font Requirements
 
 The document uses the following font families:
@@ -30,7 +48,15 @@ The document uses the following font families:
 - **Archivo Narrow** — Headings and UI elements (sans-serif)
 - **Fraunces** — Display and cover text
 
+Ads uses the following font families:
+- Alfa Slab One
+- Anton
+- Pacifico
+- Special Elite
+
 For proper Chinese/CJK character support, Noto Serif CJK SC is configured as fallback font.
+
+**Typst >= 0.15.0 required! (for variable fonts)**
 
 ## Data Sources
 
