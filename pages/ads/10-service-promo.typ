@@ -14,15 +14,15 @@
         ESTABLISHED 2026
       ]
     ]
-    #text(font: book_ad_font_script, size: 28pt, fill: luma(10))[
+    #text(font: book_ad_font_script, size: 24pt, fill: luma(10))[
       yp.dn42
     ]
-    #v(1em)
+    #v(0.5em)
     #text(font: book_ad_font_slab, size: 10pt, fill: luma(45))[
       THE DN42 TELEPHONE DIRECTORY
     ]
 
-    #block(above: 0.8em, below: 0.8em)[
+    #block(above: 0.5em, below: 0.5em)[
       #grid(columns: (1fr, auto, 1fr), align: center + horizon, gutter: 5pt)[
         #line(length: 100%, stroke: 0.5pt + luma(100))
       ][

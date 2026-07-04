@@ -1,4 +1,4 @@
-#import "../variables.typ": book_ad_show, book_ad_min_interval
+#import "../variables.typ": book_ad_min_interval, book_ad_show
 
 #import "../pages/ads/00-placeholder.typ" as ad-placeholder
 #import "../pages/ads/10-service-promo.typ" as ad-service
@@ -27,8 +27,8 @@
       auto,
       float: true,
       scope: "column",
-      clearance: 0.8em,
-      ad-content
+      clearance: 1.5em,
+      ad-content,
     )
   }
 }
