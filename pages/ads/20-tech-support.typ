@@ -33,7 +33,7 @@
       ]
       #linebreak()
       #text(font: book_ad_font_slab, size: 11pt, fill: luma(20))[
-        ACCEPTING PEERING
+        OPEN FOR PEERING
       ]
       #linebreak()
       #text(font: book_ad_font_tech, size: 11pt, fill: luma(20))[

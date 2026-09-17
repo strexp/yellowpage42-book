@@ -26,7 +26,7 @@
       fill: luma(240),
     )[
       #text(font: book_ad_font_sans_heavy, size: 12pt, fill: luma(10))[
-        DNC (DN Coin) ACCEPTED
+        Funtik (FTK) ACCEPTED
       ]
     ]
     #text(font: book_ad_font_script, size: 12pt, fill: luma(30))[

@@ -18,8 +18,8 @@
       yp.dn42
     ]
     #v(0.5em)
-    #text(font: book_ad_font_slab, size: 10pt, fill: luma(45))[
-      THE DN42 TELEPHONE DIRECTORY
+    #text(font: book_ad_font_slab, size: 8pt, fill: luma(45))[
+      THE TELEPHONE DIRECTORY
     ]
 
     #block(above: 0.5em, below: 0.5em)[
